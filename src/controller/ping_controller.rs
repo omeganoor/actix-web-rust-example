@@ -1,7 +1,8 @@
-use actix_web::HttpResponse;
+use actix_web::{get, HttpResponse};
 
 #[get("/ping")]
 fn ping() -> HttpResponse {
     HttpResponse::Ok()
-        .body("pong!".to_string())
+        .body("ok ping!!!".to_string())
 }
+

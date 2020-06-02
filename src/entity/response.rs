@@ -1,4 +1,6 @@
-#[derive(Debug, Serialize, Deserialize)]
+use serde::{Serialize, Deserialize};
+
+#[derive(Serialize, Deserialize)]
 pub struct ResponseBody<T> {
     pub message: String,
     pub data: T,

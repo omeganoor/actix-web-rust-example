@@ -1,12 +1,15 @@
+use crate::entity::user::*;
+// use actix_web::{Result};
 
-pub fn insert(new_person: PersonDTO, pool: &web::Data<Pool>) -> Result<(), ServiceError> {
-    match Person::insert(new_person, &pool.get().unwrap()) {
-        Ok(_) => Ok(())
-   }
+
+pub fn insert(new_user: User){
+    User::insert(new_user);
 }
 
-pub fn find_all() -> Result<Vec<Person>, ServiceError> {
-    match Person::find_all() {
-        Ok(person) => Ok(person),
-    }
+pub fn find_all() -> Vec<User> {
+    User::find_all()
+}
+
+pub fn find_by_id(id : i32) -> User {
+    User::find_by_id(id)
 }
